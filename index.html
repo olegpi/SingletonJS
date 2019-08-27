@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Singleton JS</title>
+    <script src="index.js" type="text/javascript"></script>
+    <script>
+		document.addEventListener("DOMContentLoaded", function() { 
+			var obj1 = {name: 'test'};
+			var obj2 = {name: 'test'};
+			var instance1 = singleObj(obj1).getInstance();
+			var instance2 = singleObj(obj1).getInstance();
+			
+			var instance3 = singleObj(obj1).getInstance();
+			var instance4 = singleObj(obj2).getInstance();
+			 
+			document.getElementById("msg1").innerHTML = `Same instance? ${instance1 === instance2}`;
+			console.log(`Same instance? ${instance1 === instance2}`);
+			
+			document.getElementById("msg2").innerHTML = `Same instance? ${instance3 === instance4}`;
+			console.log(`Same instance? ${instance3 === instance4}`);  
+		});		
+	</script>
+  </head>
+  <body>
+  <h2>Singleton JavaScript Design Pattern</h2>
+  <div id="msg1"></div>
+  <div id="msg2"></div>  
+  </body>
+</html>
